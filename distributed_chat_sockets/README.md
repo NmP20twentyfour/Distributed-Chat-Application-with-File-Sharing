@@ -196,13 +196,3 @@ This project demonstrates practical distributed systems concepts including:
 ✔ web integration
 ✔ parallel client handling
 
-It provides a robust base for building advanced communication platforms.
-
----
-
-If you'd like, I can also create:
-
-✅ **A project report (PDF)**
-✅ **System architecture diagram**
-✅ **Flowcharts or sequence diagrams**
-✅ **Better GUI/Web UI**
