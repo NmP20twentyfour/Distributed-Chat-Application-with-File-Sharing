@@ -1,0 +1,78 @@
+/* Modern responsive layout with dark-blue header and soft card surfaces */
+
+:root{
+  --bg:#0f1724;          /* page bg dark */
+  --card:#0f1728;        /* panels */
+  --panel:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#27498d;      /* header blue */
+  --accent-2:#2b60b3;
+  --accent-contrast:#ffffff;
+  --pill:#111827;
+  --success:#16a34a;
+  --radius:12px;
+  --gap:14px;
+  --font: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#0b0d10,var(--bg));font-family:var(--font);color:var(--accent-contrast);-webkit-font-smoothing:antialiased}
+.app{max-width:1100px;margin:26px auto;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(2,6,23,0.6)}
+
+/* header */
+.app-header{display:flex;align-items:center;justify-content:space-between;padding:20px 26px;background:linear-gradient(90deg,var(--accent),var(--accent-2));}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{font-size:28px;opacity:0.95}
+.title-block h1{margin:0;font-size:28px;letter-spacing:-0.6px}
+.title-block .subtitle{font-size:12px;opacity:0.95}
+
+.header-right{display:flex;align-items:center;gap:12px}
+.icon-btn{background:transparent;border:0;padding:8px;border-radius:8px;cursor:pointer;font-size:18px}
+.status{font-size:14px;opacity:0.95}
+
+/* layout */
+.main-grid{display:grid;grid-template-columns:1fr 340px;gap:var(--gap);padding:22px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+.chat-panel{background:linear-gradient(180deg,#081018, #07121a);border-radius:12px;padding:14px;min-height:60vh;display:flex;flex-direction:column}
+.control-panel{background:linear-gradient(180deg,#071422,#04101a);border-radius:12px;padding:14px;color:var(--muted)}
+
+/* messages */
+.messages{list-style:none;padding:10px;margin:0;flex:1;overflow:auto;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:78%;padding:10px 12px;border-radius:12px;background:linear-gradient(180deg,#0b1722,#08131a);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
+.msg.me{margin-left:auto;background:linear-gradient(90deg,#0f4fa9,#0a3f86);color:white}
+.msg .meta{font-size:12px;opacity:0.9;margin-bottom:6px;color:var(--muted)}
+.msg .text{white-space:pre-wrap;word-break:break-word}
+
+/* file preview */
+.file-preview img{max-width:420px;border-radius:8px;display:block}
+.file-preview video{max-width:520px;border-radius:8px;display:block}
+.msg.file{background:linear-gradient(180deg,#0b1a22,#08141a)}
+.msg.file a{color:var(--accent-contrast);text-decoration:underline}
+
+/* composer */
+.composer-row{display:flex;gap:10px;padding-top:8px}
+.msg-input{flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--accent-contrast)}
+.send-btn{background:var(--accent-2);border:0;color:white;padding:10px 14px;border-radius:10px;cursor:pointer}
+
+/* control panel internals */
+.control-block{margin-bottom:18px}
+.control-block label{display:block;margin-bottom:6px;color:var(--muted);font-size:13px}
+.control-block input[type="text"], .control-block input[type="password"], .control-block input[type="email"]{
+  width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent-contrast)
+}
+.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:0;padding:10px 12px;border-radius:10px;color:white;cursor:pointer}
+.outline{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--accent-contrast);cursor:pointer}
+.file-row{display:flex;align-items:center;gap:10px}
+.file-name{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+
+/* progress */
+.progress{width:100%;margin-top:10px;border-radius:8px}
+
+/* footer */
+.app-footer{display:flex;justify-content:space-between;padding:12px 22px;background:transparent;color:var(--muted);font-size:13px}
+
+/* responsive */
+@media (max-width:900px){
+  .main-grid{grid-template-columns:1fr;padding:12px}
+  .file-name{max-width:120px}
+  .messages{gap:8px}
+}
